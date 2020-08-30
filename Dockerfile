@@ -13,6 +13,7 @@ ENV PYSPARK_PYTHON="/opt/miniconda3/bin/python"
 RUN set -ex && \
 	apt-get update && \
     apt-get install -y curl bzip2 --no-install-recommends && \
+    apt-get install -y vim netcat net-tools procps bsdmainutils --no-install-recommends --ignore-missing && \
     curl -s -L --url "https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh" --output /tmp/miniconda.sh && \
     bash /tmp/miniconda.sh -b -f -p "/opt/miniconda3" && \
     rm /tmp/miniconda.sh && \
